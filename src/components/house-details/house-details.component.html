@@ -1,0 +1,16 @@
+<section class="grid grid-cols-2 ">
+  <article class="flex flex-col gap-5">
+    <h1 class="text-5xl font-bold">{{house.name}}</h1>
+    <div class="flex gap-2 items-center text-2xl">
+      <i class="fa-solid text-purple-600 fa-location-dot"></i>
+      <h1>{{house.city}}</h1>
+    </div>
+    <h1 class=" text-purple-600 text-2xl font-bold" >About this housing location</h1>
+    <div class="flex flex-col gap-2">
+      <p>Units avaible {{house.availableUnits}}</p>
+      <p>Does this location have wifi: {{house.wifi ? "yes" : "no"}} </p>
+      <p>Does this location have laundry: {{house.laundry ? "yes" : "no"}} </p>
+    </div>
+  </article>
+    <img class="rounded-3xl w-full object-cover  h-96" [src]="house.photo" alt="">
+</section>

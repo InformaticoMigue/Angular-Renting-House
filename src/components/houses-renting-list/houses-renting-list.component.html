@@ -1,0 +1,8 @@
+<section>
+  <app-search (submitForm)="handleFilterButton($event)"></app-search>
+</section>
+<section class="grid grid-cols-4 gap-10 px-20 my-10">
+  @for (house of houses; track house.id) {
+    <app-houses-renting-card [house]="house"></app-houses-renting-card>
+  }
+</section>

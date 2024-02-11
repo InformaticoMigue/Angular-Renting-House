@@ -1,0 +1,6 @@
+<article>
+  <form [formGroup]="searchForm" class="p-2 flex w-1/2 gap-5">
+    <input class="w-1/2 border border-black p-1 rounded-sm" type="text" value="Filter by city" formControlName="search">
+    <button (click)="onSubmit()" [disabled]="searchForm.invalid" [ngClass]="searchForm.invalid ? 'text-white bg-purple-300':'text-white bg-purple-600'" class="w-1/4 rounded-md">Search</button>
+  </form>
+</article>
