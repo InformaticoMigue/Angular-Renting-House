@@ -23,16 +23,16 @@ export class HousesRentingListComponent implements OnInit {
 
   setAllHouses(){
     this.serviceHouseRenting.getAllHouses()
-    .then(h => {
-      this.houses = h
-    },error => {
-      console.warn(`Error loading houses ${error}`)
-    }); 
+    .subscribe({
+      next: (houses) => this.houses = houses,
+      error: () => console.error("Failed to get all houses")
+    })
   }
 
   handleFilterButton(filter:string){
-    this.serviceHouseRenting.getHouesByCity(filter).then(hF => {
-      hF.length === 0 ? this.setAllHouses() : this.houses = hF; 
+    this.serviceHouseRenting.getHousesByCity(filter).subscribe({
+      next: (hF) => hF.length === 0 ? this.setAllHouses() : this.houses = hF,
+      error: () => console.error("Failed to get all houses by city")
     })
   }
 

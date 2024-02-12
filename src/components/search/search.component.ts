@@ -26,7 +26,7 @@ export class SearchComponent implements OnInit {
     })
   }
 
-  onSubmit() {
+  onSubmit() {   
     this.submitForm.emit(this.searchForm.controls["search"].value)       
   }
 

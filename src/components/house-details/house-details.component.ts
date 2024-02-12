@@ -18,12 +18,9 @@ export class HouseDetailsComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe(params => {
       const idHouse = +params.get("idHouse")!;      
-      this.houseRentingService.find(idHouse).then(h => {
-      
-        h == undefined ? 
-        this.router.navigate(["/"]) :
-        this.house = h
-      
+      this.houseRentingService.find(idHouse).subscribe({
+        next: (h) => h == undefined ? this.router.navigate(["/"]) : this.house = h,
+        error: () => "Error in get house"
       })
     })    
   }
