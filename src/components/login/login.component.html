@@ -1,0 +1,20 @@
+  <form [formGroup]="loginForm" class="flex flex-col text-center mt-10 gap-10 items-center">
+
+    <h1 class="text-4xl">Login</h1>
+
+    <div class="flex flex-col ">
+        <h3>Nombre</h3>
+        <input formControlName="name" type="text" class="p-2 w-72 border-2 rounded border-purple-500">
+    </div>
+    <div class="flex flex-col">
+        <h3>Apellidos</h3>
+        <input formControlName="surnames" type="text" class="p-2 w-72 border-2 rounded border-purple-500">
+    </div>
+    <div class="flex flex-col">
+        <h3>Email</h3>
+        <input formControlName="email" type="text" class="p-2 w-72 border-2 rounded border-purple-500">
+    </div>
+
+    <button (click)="onSubmit()" [disabled]="loginForm.invalid" [ngClass]="loginForm.invalid ? 'bg-gray-300 ':'hover:bg-purple-500 text-black hover:text-white'" (submit)="onSubmit()" class="w-1/6 p-2 transition-all">Login</button>
+
+  </form>
