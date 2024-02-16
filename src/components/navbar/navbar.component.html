@@ -1,7 +1,12 @@
-<div class="grid grid-cols-2 shadow-md p-2 pb-5 text-4xl text-purple-600 font-semibold">
+<div class="grid grid-cols-3 shadow-md p-2 pb-5 text-4xl text-purple-600 font-semibold">
   <ul class="flex">
     <li>
       <a [routerLink]="'/'"><i class="fa-solid fa-house-chimney"></i>Homes</a>
+    </li>
+  </ul>
+  <ul class="flex justify-center">
+    <li>
+      <a [routerLink]="'/map'"><i class="fa-solid fa-map-location-dot"></i></a>
     </li>
   </ul>
   <ul class="flex justify-end">
@@ -12,6 +17,5 @@
         <a [routerLink]="'/login'">Login</a>
       </li>
     }
-    
   </ul>
 </div>

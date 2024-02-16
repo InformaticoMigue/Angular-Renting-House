@@ -6,5 +6,9 @@ export type House = {
     photo: string,
     availableUnits: number,
     wifi: boolean,
-    laundry: boolean,  
+    laundry: boolean,
+    coords: {
+        lat: number,
+        long:number
+    }  
 }

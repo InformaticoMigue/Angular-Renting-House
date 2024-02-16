@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
       surnames: this.loginForm.controls['surnames'].value
     }
     this.userService.setUser(user);
-    this.router.navigate(['/']);
+    this.router.navigate(["/"]);
 
   }
 

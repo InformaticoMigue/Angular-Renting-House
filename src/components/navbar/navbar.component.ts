@@ -13,10 +13,12 @@ import { UserService } from '../../service/user.service';
 export class NavbarComponent implements OnInit {
 
   userService: UserService = inject(UserService)
-  user!:User;
+  user!:User | null;
 
   ngOnInit() {
-   this.user = this.userService.getUser();
+    this.userService.getUser().subscribe((user) => {            
+      this.user = user;
+    });
   }
 
 }
