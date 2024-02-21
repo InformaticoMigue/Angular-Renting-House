@@ -10,5 +10,6 @@ export type House = {
     coords: {
         lat: number,
         long:number
-    }  
+    }
+    valoration: number  
 }

@@ -10,6 +10,25 @@
       <p>Units avaible {{house.availableUnits}}</p>
       <p>Does this location have wifi: {{house.wifi ? "yes" : "no"}} </p>
       <p>Does this location have laundry: {{house.laundry ? "yes" : "no"}} </p>
+      <p>Valoration for users {{icon}}</p>
+      <form [formGroup]="formValorate" (submit)="onSubmit()">
+        <div class="flex flex-col gap-5 justify-center">
+          <h4 class="text-2xl">Indicate your own rating</h4>
+          <select class="border border-black w-1/5 text-center" name="" id="" formControlName="validate">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
+          <button [disabled]="formValorate.invalid" class="w-1/5 border border-black">Valorate</button>
+        </div>
+      </form>
     </div>
   </article>
     <img class="rounded-3xl w-full object-cover  h-96" [src]="house.photo" alt="">

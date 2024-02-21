@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { House } from '../assets/types/house';
-import { Observable, map } from 'rxjs';
+import { Observable, map, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -27,6 +27,9 @@ export class HouseRentingService {
       map(houses => houses.find(house => house.id === id))
     )
   }
+
+
+  
 
 
 
